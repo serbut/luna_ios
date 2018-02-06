@@ -28,7 +28,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vID-wf-hBr" id="DaS-Lv-bpf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="h0x-gj-Wjp">
@@ -77,6 +77,12 @@
                                                 <constraint firstItem="h0x-gj-Wjp" firstAttribute="top" secondItem="esM-A2-YgX" secondAttribute="bottom" constant="19" id="zhy-iy-Y82"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="addressLabel" destination="cbQ-BL-AaM" id="v1U-Z7-vLq"/>
+                                            <outlet property="avatarImageView" destination="esM-A2-YgX" id="hYU-qi-0EQ"/>
+                                            <outlet property="nameLabel" destination="LDO-W3-lBA" id="OoF-qZ-Ywv"/>
+                                            <outlet property="photoImageView" destination="h0x-gj-Wjp" id="p01-ae-4o6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>

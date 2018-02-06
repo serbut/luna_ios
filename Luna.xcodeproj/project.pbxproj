@@ -8,6 +8,8 @@
 
 /* Begin PBXBuildFile section */
 		07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */; };
+		07382E33202A26B80024459B /* FeedViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 07382E32202A26B80024459B /* FeedViewController.graphql */; };
+		07382E36202A34E10024459B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E35202A34E00024459B /* API.swift */; };
 		07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */; };
 		07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */; };
 		07CA33AA201A7AB700E2B8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33A8201A7AB700E2B8D7 /* Main.storyboard */; };
@@ -31,6 +33,8 @@
 
 /* Begin PBXFileReference section */
 		07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTableViewCell.swift; sourceTree = "<group>"; };
+		07382E32202A26B80024459B /* FeedViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedViewController.graphql; sourceTree = "<group>"; };
+		07382E35202A34E00024459B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Luna/API.swift; sourceTree = SOURCE_ROOT; };
 		07CA33A1201A7AB700E2B8D7 /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -81,6 +85,8 @@
 		07382E28202A04C20024459B /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
+				07382E35202A34E00024459B /* API.swift */,
+				07382E32202A26B80024459B /* FeedViewController.graphql */,
 			);
 			path = GraphQL;
 			sourceTree = "<group>";
@@ -182,6 +188,7 @@
 			buildConfigurationList = 07CA33C1201A7AB800E2B8D7 /* Build configuration list for PBXNativeTarget "Luna" */;
 			buildPhases = (
 				286C20069D1A782E4279D77B /* [CP] Check Pods Manifest.lock */,
+				07382E34202A27570024459B /* Generate Apollo GraphQL API */,
 				07CA339D201A7AB700E2B8D7 /* Sources */,
 				07CA339E201A7AB700E2B8D7 /* Frameworks */,
 				07CA339F201A7AB700E2B8D7 /* Resources */,
@@ -265,6 +272,7 @@
 			files = (
 				07CA33B2201A7AB700E2B8D7 /* LaunchScreen.storyboard in Resources */,
 				07CA33AF201A7AB700E2B8D7 /* Assets.xcassets in Resources */,
+				07382E33202A26B80024459B /* FeedViewController.graphql in Resources */,
 				07CA33AA201A7AB700E2B8D7 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -279,6 +287,20 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		07382E34202A27570024459B /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift\n";
+		};
 		1403A419BE6D118349E63CBF /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -389,6 +411,7 @@
 				07CA33AD201A7AB700E2B8D7 /* Luna.xcdatamodeld in Sources */,
 				07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */,
 				07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */,
+				07382E36202A34E10024459B /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

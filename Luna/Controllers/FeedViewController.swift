@@ -10,30 +10,47 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
+    // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
+    
+    // MARK: - Variables
     let rowHeight: CGFloat = 350
+    
+    var feedItems: [FeedItem] = [] {
+        didSet {
+            tableView.reloadData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
         tableView.dataSource = self
         tableView.delegate = self
+        
+        let allFeedQuery = AllFeedQuery(limit: 10, offset: 0)
+        apollo.fetch(query: allFeedQuery) { [weak self] result, error in
+            guard let feedItems = result?.data?.feed else { return }
+            self?.feedItems = feedItems.map { $0.fragments.feedItem }
+        }
     }
 
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
+    
 }
 
 // MARK: - Table View Data Source
 extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return feedItems.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedItem") as! FeedItemTableViewCell
+        
+        let itemForCell = feedItems[indexPath.row]
+        
+        cell.nameLabel.text = itemForCell.name
+        cell.addressLabel.text = "Stars: \(itemForCell.stars)"
         
         return cell
     }

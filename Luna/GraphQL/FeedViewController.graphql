@@ -1,0 +1,32 @@
+query AllFeed($limit: Int!, $offset: Int!) {
+    feed(limit: $limit, offset: $offset) {
+        ...FeedItem
+    }
+}
+
+fragment FeedItem on Master {
+    id
+    name
+    avatar {
+        path
+        tags {
+            id
+            name
+        }
+    }
+    photos {
+        id
+        path
+        tags {
+            id
+            name
+        }
+    }
+    stars
+    signs {
+        id
+        name
+        description
+        icon
+    }
+}

@@ -8,6 +8,11 @@
 
 import UIKit
 import CoreData
+import Apollo
+
+let apiUrl = "https://utrobin.com/api/"
+let graphQlUrl = apiUrl + "graphql"
+let apollo = ApolloClient(url: URL(string: graphQlUrl)!)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
