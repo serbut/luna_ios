@@ -20,10 +20,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-pv-gRJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="350" estimatedRowHeight="350" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-pv-gRJ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="NlA-Zr-c5g">
+                                <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" id="NlA-Zr-c5g">
                                     <rect key="frame" x="0.0" y="378" width="375" height="20"/>
                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 </activityIndicatorView>
@@ -32,7 +32,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="350"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vID-wf-hBr" id="DaS-Lv-bpf">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="350"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="h0x-gj-Wjp">
@@ -96,11 +96,16 @@
                                     </tableViewCell>
                                 </prototypes>
                             </tableView>
+                            <activityIndicatorView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="p4H-7B-II4">
+                                <rect key="frame" x="177" y="333" width="20" height="20"/>
+                            </activityIndicatorView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstItem="p4H-7B-II4" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="4pn-yZ-NNP"/>
                             <constraint firstItem="2BP-pv-gRJ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="BE2-pS-9Od"/>
                             <constraint firstItem="2BP-pv-gRJ" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" id="dbu-25-kLR"/>
+                            <constraint firstItem="p4H-7B-II4" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="rkv-HC-tGu"/>
                             <constraint firstItem="2BP-pv-gRJ" firstAttribute="bottom" secondItem="6Tk-OE-BBY" secondAttribute="bottom" id="s5R-oo-O4M"/>
                             <constraint firstItem="2BP-pv-gRJ" firstAttribute="trailing" secondItem="6Tk-OE-BBY" secondAttribute="trailing" id="zFv-QE-x0G"/>
                         </constraints>
@@ -108,6 +113,7 @@
                     </view>
                     <connections>
                         <outlet property="footerActivityIndicator" destination="NlA-Zr-c5g" id="N00-Sd-vgP"/>
+                        <outlet property="initialLoadingActivitiIndicator" destination="p4H-7B-II4" id="Fgn-3Q-bWs"/>
                         <outlet property="tableView" destination="2BP-pv-gRJ" id="g4H-gC-hVc"/>
                     </connections>
                 </viewController>

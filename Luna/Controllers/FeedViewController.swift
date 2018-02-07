@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  FeedViewController.swift
 //  Luna
 //
 //  Created by Sergey Butorin on 25/01/2018.
@@ -13,11 +13,16 @@ class FeedViewController: UIViewController {
     // MARK: - IBOutlets
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var footerActivityIndicator: UIActivityIndicatorView!
+    @IBOutlet weak var initialLoadingActivitiIndicator: UIActivityIndicatorView!
     
     // MARK: - Variables
-    let rowHeight: CGFloat = 350
-    
-    var feedItems: [FeedItem] = []
+    var feedItems = [FeedItem]() {
+        didSet {
+            DispatchQueue.main.async {
+                self.initialLoadingActivitiIndicator.stopAnimating()
+            }
+        }
+    }
     
     let loadLimit = 10
     var currentPage = 0
@@ -37,9 +42,8 @@ class FeedViewController: UIViewController {
         let allFeedQuery = FeedQuery(limit: limit, offset: (page - 1) * limit)
         apollo.fetch(query: allFeedQuery) { [unowned self] result, error in
             UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            self.footerActivityIndicator.stopAnimating()
-            
             guard let graphQLFeedItems = result?.data?.feed else { return }
+            self.footerActivityIndicator.stopAnimating()
             
             if (!graphQLFeedItems.isEmpty) {
                 DispatchQueue.global(qos: .userInitiated).async {
@@ -48,7 +52,7 @@ class FeedViewController: UIViewController {
                     self.feedItems.append(contentsOf: newItems)
                     DispatchQueue.main.async {
                         self.tableView.beginUpdates()
-                        self.tableView.insertRows(at: indexPaths, with: .automatic)
+                        self.tableView.insertRows(at: indexPaths, with: .none)
                         self.tableView.endUpdates()
                     }
                 }
@@ -83,19 +87,15 @@ extension FeedViewController: UITableViewDataSource {
         if let avatar = itemForCell.avatar {
             cell.setAvatar(avatar.image)
         }
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return rowHeight
+        
+//        print(itemForCell.photos)
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == feedItems.count - 1) {
             loadFeed(page: currentPage)
+            footerActivityIndicator.startAnimating()
         }
-    }
-    func tableView(_ tableView: UITableView, willDisplayFooterView view: UIView, forSection section: Int) {
-        footerActivityIndicator.startAnimating()
     }
 }
 
