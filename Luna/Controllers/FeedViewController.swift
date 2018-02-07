@@ -33,35 +33,8 @@ class FeedViewController: UIViewController {
         tableView.dataSource = self
         tableView.delegate = self
         
-        loadFeed(page: currentPage)
+        loadNextPage()
     }
-
-    func loadFeed(page: Int) {
-        UIApplication.shared.isNetworkActivityIndicatorVisible = true
-        let limit = 10
-        let allFeedQuery = FeedQuery(limit: limit, offset: (page - 1) * limit)
-        apollo.fetch(query: allFeedQuery) { [unowned self] result, error in
-            UIApplication.shared.isNetworkActivityIndicatorVisible = false
-            guard let graphQLFeedItems = result?.data?.feed else { return }
-            self.footerActivityIndicator.stopAnimating()
-            
-            if (!graphQLFeedItems.isEmpty) {
-                DispatchQueue.global(qos: .userInitiated).async {
-                    let newItems = graphQLFeedItems.map { FeedItem(from: $0) }
-                    let indexPaths = newItems.indices.map { IndexPath(row: $0 + self.feedItems.count, section: 0) }
-                    self.feedItems.append(contentsOf: newItems)
-                    DispatchQueue.main.async {
-                        self.tableView.beginUpdates()
-                        self.tableView.insertRows(at: indexPaths, with: .none)
-                        self.tableView.endUpdates()
-                    }
-                }
-            }
-        }
-        currentPage += 1
-    }
-    
-    
 }
 
 // MARK: - Table View Data Source
@@ -93,9 +66,31 @@ extension FeedViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
         if (indexPath.row == feedItems.count - 1) {
-            loadFeed(page: currentPage)
+            loadNextPage()
+        }
+    }
+    
+    private func loadNextPage() {
+        if (!feedItems.isEmpty) {
             footerActivityIndicator.startAnimating()
         }
+        FeedManager.shared.loadFeed(page: currentPage) { items in
+            self.footerActivityIndicator.stopAnimating()
+            
+            if (!items.isEmpty) {
+                DispatchQueue.global(qos: .userInitiated).async {
+                    let newItems = items.map { FeedItem(from: $0) }
+                    let indexPaths = newItems.indices.map { IndexPath(row: $0 + self.feedItems.count, section: 0) }
+                    self.feedItems.append(contentsOf: newItems)
+                    DispatchQueue.main.async {
+                        self.tableView.beginUpdates()
+                        self.tableView.insertRows(at: indexPaths, with: .none)
+                        self.tableView.endUpdates()
+                    }
+                }
+            }
+        }
+        currentPage += 1
     }
 }
 
