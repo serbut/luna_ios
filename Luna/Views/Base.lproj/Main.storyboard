@@ -20,9 +20,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-pv-gRJ">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="2BP-pv-gRJ">
                                 <rect key="frame" x="0.0" y="20" width="375" height="647"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <activityIndicatorView key="tableFooterView" hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" animating="YES" style="gray" id="NlA-Zr-c5g">
+                                    <rect key="frame" x="0.0" y="378" width="375" height="20"/>
+                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                </activityIndicatorView>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="FeedItem" rowHeight="350" id="vID-wf-hBr" customClass="FeedItemTableViewCell" customModule="Luna" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="350"/>
@@ -49,7 +53,7 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="esM-A2-YgX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="esM-A2-YgX">
                                                     <rect key="frame" x="15" y="11" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="b48-QV-2Rf"/>
@@ -62,6 +66,9 @@
                                                     <color key="pageIndicatorTintColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     <color key="currentPageIndicatorTintColor" cocoaTouchSystemColor="darkTextColor"/>
                                                 </pageControl>
+                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uV6-b8-OdM">
+                                                    <rect key="frame" x="30" y="26" width="20" height="20"/>
+                                                </activityIndicatorView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="cbQ-BL-AaM" firstAttribute="centerX" secondItem="LDO-W3-lBA" secondAttribute="centerX" id="4KO-qg-kqb"/>
@@ -70,8 +77,10 @@
                                                 <constraint firstAttribute="trailing" secondItem="h0x-gj-Wjp" secondAttribute="trailing" id="NUZ-ze-x3B"/>
                                                 <constraint firstItem="LDO-W3-lBA" firstAttribute="leading" secondItem="esM-A2-YgX" secondAttribute="trailing" constant="8" id="RkF-Ba-FxQ"/>
                                                 <constraint firstItem="cbQ-BL-AaM" firstAttribute="bottom" secondItem="esM-A2-YgX" secondAttribute="bottom" id="U9O-3d-23L"/>
+                                                <constraint firstItem="uV6-b8-OdM" firstAttribute="centerX" secondItem="esM-A2-YgX" secondAttribute="centerX" id="aXu-QV-aFg"/>
                                                 <constraint firstAttribute="trailing" secondItem="LDO-W3-lBA" secondAttribute="trailing" constant="20" symbolic="YES" id="iFE-uI-5XM"/>
                                                 <constraint firstItem="esM-A2-YgX" firstAttribute="leading" secondItem="DaS-Lv-bpf" secondAttribute="leadingMargin" id="reb-lf-eeQ"/>
+                                                <constraint firstItem="uV6-b8-OdM" firstAttribute="centerY" secondItem="esM-A2-YgX" secondAttribute="centerY" id="tJg-Wc-WzV"/>
                                                 <constraint firstItem="cbQ-BL-AaM" firstAttribute="width" secondItem="LDO-W3-lBA" secondAttribute="width" id="uA6-Wm-yIV"/>
                                                 <constraint firstItem="esM-A2-YgX" firstAttribute="top" secondItem="DaS-Lv-bpf" secondAttribute="topMargin" id="v6S-ZJ-vAx"/>
                                                 <constraint firstItem="h0x-gj-Wjp" firstAttribute="top" secondItem="esM-A2-YgX" secondAttribute="bottom" constant="19" id="zhy-iy-Y82"/>
@@ -80,6 +89,7 @@
                                         <connections>
                                             <outlet property="addressLabel" destination="cbQ-BL-AaM" id="v1U-Z7-vLq"/>
                                             <outlet property="avatarImageView" destination="esM-A2-YgX" id="hYU-qi-0EQ"/>
+                                            <outlet property="avatarLoadingActivityIndicator" destination="uV6-b8-OdM" id="NWr-qt-gB0"/>
                                             <outlet property="nameLabel" destination="LDO-W3-lBA" id="OoF-qZ-Ywv"/>
                                             <outlet property="photoImageView" destination="h0x-gj-Wjp" id="p01-ae-4o6"/>
                                         </connections>
@@ -97,6 +107,7 @@
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
                     <connections>
+                        <outlet property="footerActivityIndicator" destination="NlA-Zr-c5g" id="N00-Sd-vgP"/>
                         <outlet property="tableView" destination="2BP-pv-gRJ" id="g4H-gC-hVc"/>
                     </connections>
                 </viewController>

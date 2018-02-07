@@ -10,6 +10,9 @@
 		07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */; };
 		07382E33202A26B80024459B /* FeedViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 07382E32202A26B80024459B /* FeedViewController.graphql */; };
 		07382E36202A34E10024459B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E35202A34E00024459B /* API.swift */; };
+		0780CA1B202B18FA00D692F8 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA1A202B18FA00D692F8 /* DownloadManager.swift */; };
+		0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA1F202B20F800D692F8 /* FeedItem.swift */; };
+		0780CA22202B239000D692F8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA21202B239000D692F8 /* Photo.swift */; };
 		07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */; };
 		07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */; };
 		07CA33AA201A7AB700E2B8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33A8201A7AB700E2B8D7 /* Main.storyboard */; };
@@ -35,6 +38,9 @@
 		07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTableViewCell.swift; sourceTree = "<group>"; };
 		07382E32202A26B80024459B /* FeedViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedViewController.graphql; sourceTree = "<group>"; };
 		07382E35202A34E00024459B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Luna/API.swift; sourceTree = SOURCE_ROOT; };
+		0780CA1A202B18FA00D692F8 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
+		0780CA1F202B20F800D692F8 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		0780CA21202B239000D692F8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		07CA33A1201A7AB700E2B8D7 /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -104,6 +110,8 @@
 		07382E2C202A17290024459B /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				0780CA1F202B20F800D692F8 /* FeedItem.swift */,
+				0780CA21202B239000D692F8 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -114,6 +122,14 @@
 				07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */,
 			);
 			path = FeedItem;
+			sourceTree = "<group>";
+		};
+		0780CA19202B18C800D692F8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0780CA1A202B18FA00D692F8 /* DownloadManager.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 		07CA3398201A7AB700E2B8D7 = {
@@ -144,6 +160,7 @@
 				07382E2B202A17150024459B /* Views */,
 				07382E27202A04950024459B /* Controllers */,
 				07382E28202A04C20024459B /* GraphQL */,
+				0780CA19202B18C800D692F8 /* Network */,
 				07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */,
 				07CA33B3201A7AB700E2B8D7 /* Info.plist */,
 				07CA33AB201A7AB700E2B8D7 /* Luna.xcdatamodeld */,
@@ -308,10 +325,12 @@
 			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-Luna/Pods-Luna-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -407,10 +426,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0780CA22202B239000D692F8 /* Photo.swift in Sources */,
 				07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */,
+				0780CA1B202B18FA00D692F8 /* DownloadManager.swift in Sources */,
 				07CA33AD201A7AB700E2B8D7 /* Luna.xcdatamodeld in Sources */,
 				07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */,
 				07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */,
+				0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */,
 				07382E36202A34E10024459B /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -568,6 +590,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H2J8552ML;
 				INFOPLIST_FILE = Luna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergeybutorin.Luna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -584,6 +607,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H2J8552ML;
 				INFOPLIST_FILE = Luna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergeybutorin.Luna;
 				PRODUCT_NAME = "$(TARGET_NAME)";

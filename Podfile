@@ -8,7 +8,7 @@ target 'Luna' do
   # Pods for Luna
 
   pod 'Apollo', '~> 0.7.0'
-
+  pod 'Alamofire', '~> 4.5'
   target 'LunaTests' do
     inherit! :search_paths
     # Pods for testing
