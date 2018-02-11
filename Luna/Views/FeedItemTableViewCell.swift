@@ -15,6 +15,7 @@ class FeedItemTableViewCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var addressLabel: UILabel!
     @IBOutlet weak var photoImageView: UIImageView!
+    @IBOutlet weak var photoLoadingActivityIndicator: UIActivityIndicatorView!
     
     func setAvatar(_ avatar: UIImage?) {
         if let avatar = avatar {
@@ -27,15 +28,14 @@ class FeedItemTableViewCell: UITableViewCell {
         }
     }
     
-    override func awakeFromNib() {
-        super.awakeFromNib()
-        // Initialization code
+    func setPhoto(_ photo: UIImage?) {
+        if let photo = photo {
+            photoLoadingActivityIndicator.stopAnimating()
+            photoImageView.isHidden = false
+            photoImageView.image = photo
+        } else {
+            photoLoadingActivityIndicator.startAnimating()
+            photoImageView.isHidden = true
+        }
     }
-
-    override func setSelected(_ selected: Bool, animated: Bool) {
-        super.setSelected(selected, animated: animated)
-
-        // Configure the view for the selected state
-    }
-    
 }

@@ -23,6 +23,9 @@ struct FeedItem {
         self.address = graphQLFeedItem.address.description
         self.avatar = Photo(path: graphQLFeedItem.avatar.path)
         self.photos = [Photo]()
+        for photoUrl in graphQLFeedItem.photos {
+            self.photos.append(Photo(path: photoUrl.path)!)
+        }
         self.stars = graphQLFeedItem.stars
     }
 }

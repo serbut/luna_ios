@@ -60,8 +60,9 @@ extension FeedViewController: UITableViewDataSource {
         if let avatar = itemForCell.avatar {
             cell.setAvatar(avatar.image)
         }
-        
-//        print(itemForCell.photos)
+        if let photo = itemForCell.photos.first {
+            cell.setPhoto(photo.image)
+        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {

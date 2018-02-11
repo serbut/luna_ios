@@ -102,7 +102,7 @@
 		07382E2B202A17150024459B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				07382E2D202A17420024459B /* FeedItem */,
+				07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */,
 				07CA33A8201A7AB700E2B8D7 /* Main.storyboard */,
 				07CA33B0201A7AB700E2B8D7 /* LaunchScreen.storyboard */,
 			);
@@ -116,14 +116,6 @@
 				0780CA21202B239000D692F8 /* Photo.swift */,
 			);
 			path = Models;
-			sourceTree = "<group>";
-		};
-		07382E2D202A17420024459B /* FeedItem */ = {
-			isa = PBXGroup;
-			children = (
-				07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */,
-			);
-			path = FeedItem;
 			sourceTree = "<group>";
 		};
 		0780CA19202B18C800D692F8 /* Network */ = {
