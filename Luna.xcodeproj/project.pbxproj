@@ -12,7 +12,6 @@
 		07382E36202A34E10024459B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E35202A34E00024459B /* API.swift */; };
 		0780CA1B202B18FA00D692F8 /* DownloadManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA1A202B18FA00D692F8 /* DownloadManager.swift */; };
 		0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA1F202B20F800D692F8 /* FeedItem.swift */; };
-		0780CA22202B239000D692F8 /* Photo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA21202B239000D692F8 /* Photo.swift */; };
 		0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA23202B924C00D692F8 /* FeedManager.swift */; };
 		07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */; };
 		07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */; };
@@ -41,7 +40,6 @@
 		07382E35202A34E00024459B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Luna/API.swift; sourceTree = SOURCE_ROOT; };
 		0780CA1A202B18FA00D692F8 /* DownloadManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadManager.swift; sourceTree = "<group>"; };
 		0780CA1F202B20F800D692F8 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
-		0780CA21202B239000D692F8 /* Photo.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Photo.swift; sourceTree = "<group>"; };
 		0780CA23202B924C00D692F8 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
 		07CA33A1201A7AB700E2B8D7 /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -113,7 +111,6 @@
 			isa = PBXGroup;
 			children = (
 				0780CA1F202B20F800D692F8 /* FeedItem.swift */,
-				0780CA21202B239000D692F8 /* Photo.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -421,7 +418,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				0780CA22202B239000D692F8 /* Photo.swift in Sources */,
 				07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */,
 				0780CA1B202B18FA00D692F8 /* DownloadManager.swift in Sources */,
 				07CA33AD201A7AB700E2B8D7 /* Luna.xcdatamodeld in Sources */,

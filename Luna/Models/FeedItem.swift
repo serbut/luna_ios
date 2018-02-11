@@ -13,19 +13,16 @@ struct FeedItem {
     let id: String
     let name: String
     let address: String
-    let avatar: Photo?
-    var photos: [Photo]
+    let avatarPath: URL?
+    var photosPath: [URL]
     let stars: Double
     
     init(from graphQLFeedItem: FeedQuery.Data.Feed) {
         self.id = graphQLFeedItem.id
         self.name = graphQLFeedItem.name
         self.address = graphQLFeedItem.address.description
-        self.avatar = Photo(path: graphQLFeedItem.avatar.path)
-        self.photos = [Photo]()
-        for photoUrl in graphQLFeedItem.photos {
-            self.photos.append(Photo(path: photoUrl.path)!)
-        }
+        self.avatarPath = URL(string: graphQLFeedItem.avatar.path)
+        self.photosPath = graphQLFeedItem.photos.flatMap { URL(string: $0.path) }
         self.stars = graphQLFeedItem.stars
     }
 }

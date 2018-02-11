@@ -24,6 +24,8 @@ class FeedViewController: UIViewController {
         }
     }
     
+    let imageCache = NSCache<NSURL, UIImage>()
+    
     let loadLimit = 10
     var currentPage = 0
     
@@ -57,11 +59,32 @@ extension FeedViewController: UITableViewDataSource {
         cell.nameLabel.text = "\(itemIndex) \(itemForCell.name)"
         cell.addressLabel.text = itemForCell.address.description
         
-        if let avatar = itemForCell.avatar {
-            cell.setAvatar(avatar.image)
+        if let avatarPath = itemForCell.avatarPath {
+            if let avatar = imageCache.object(forKey: avatarPath as NSURL) {
+                cell.setAvatar(avatar)
+            } else {
+                DownloadManager.shared.downloadImage(with: avatarPath) { image in
+                    if let image = image {
+                        self.imageCache.setObject(image, forKey: avatarPath as NSURL)
+                        cell.setAvatar(image)
+                    }
+                }
+            }
+            
         }
-        if let photo = itemForCell.photos.first {
-            cell.setPhoto(photo.image)
+        
+        if let photoPath = itemForCell.photosPath.first {
+            if let photo = imageCache.object(forKey: photoPath as NSURL) {
+                cell.setPhoto(photo)
+            } else {
+                DownloadManager.shared.downloadImage(with: photoPath) { image in
+                    if let image = image {
+                        self.imageCache.setObject(image, forKey: photoPath as NSURL)
+                        cell.setPhoto(image)
+                    }
+                }
+            }
+            
         }
     }
     
