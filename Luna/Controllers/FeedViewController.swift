@@ -60,9 +60,8 @@ extension FeedViewController: UITableViewDataSource {
         cell.addressLabel.text = itemForCell.address.description
         
         if let avatarPath = itemForCell.avatarPath {
-            if let avatar = imageCache.object(forKey: avatarPath as NSURL) {
-                cell.setAvatar(avatar)
-            } else {
+            cell.setAvatar(imageCache.object(forKey: avatarPath as NSURL))
+            if imageCache.object(forKey: avatarPath as NSURL) == nil {
                 DownloadManager.shared.downloadImage(with: avatarPath) { image in
                     if let image = image {
                         self.imageCache.setObject(image, forKey: avatarPath as NSURL)
@@ -70,13 +69,11 @@ extension FeedViewController: UITableViewDataSource {
                     }
                 }
             }
-            
         }
         
         if let photoPath = itemForCell.photosPath.first {
-            if let photo = imageCache.object(forKey: photoPath as NSURL) {
-                cell.setPhoto(photo)
-            } else {
+            cell.setPhoto(imageCache.object(forKey: photoPath as NSURL))
+            if imageCache.object(forKey: photoPath as NSURL) == nil {
                 DownloadManager.shared.downloadImage(with: photoPath) { image in
                     if let image = image {
                         self.imageCache.setObject(image, forKey: photoPath as NSURL)
@@ -84,7 +81,6 @@ extension FeedViewController: UITableViewDataSource {
                     }
                 }
             }
-            
         }
     }
     
@@ -122,5 +118,11 @@ extension FeedViewController: UITableViewDataSource {
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
+    }
+}
+
+extension UIImageView {
+    func setImage(forPath parh: URL) {
+        
     }
 }

@@ -35,15 +35,12 @@
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="349.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="h0x-gj-Wjp">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_image" translatesAutoresizingMaskIntoConstraints="NO" id="h0x-gj-Wjp" customClass="LPhotoView" customModule="Luna" customModuleProvider="target">
                                                     <rect key="frame" x="0.0" y="80" width="375" height="216.5"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" secondItem="h0x-gj-Wjp" secondAttribute="height" multiplier="116:67" id="alB-4d-PAD"/>
                                                     </constraints>
                                                 </imageView>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="gUb-HL-r21">
-                                                    <rect key="frame" x="177" y="178" width="20" height="20"/>
-                                                </activityIndicatorView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Many Hands" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LDO-W3-lBA">
                                                     <rect key="frame" x="73" y="11" width="282" height="30"/>
                                                     <fontDescription key="fontDescription" type="boldSystem" pointSize="25"/>
@@ -56,16 +53,13 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
-                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="esM-A2-YgX">
+                                                <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="no_avatar" translatesAutoresizingMaskIntoConstraints="NO" id="esM-A2-YgX" customClass="LPhotoView" customModule="Luna" customModuleProvider="target">
                                                     <rect key="frame" x="15" y="11" width="50" height="50"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="50" id="b48-QV-2Rf"/>
                                                         <constraint firstAttribute="width" secondItem="esM-A2-YgX" secondAttribute="height" multiplier="1:1" id="hzF-KR-w4E"/>
                                                     </constraints>
                                                 </imageView>
-                                                <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="uV6-b8-OdM">
-                                                    <rect key="frame" x="30" y="26" width="20" height="20"/>
-                                                </activityIndicatorView>
                                                 <pageControl opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" numberOfPages="3" translatesAutoresizingMaskIntoConstraints="NO" id="KZs-IO-Z7p">
                                                     <rect key="frame" x="168" y="302" width="39" height="37"/>
                                                     <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -76,16 +70,12 @@
                                             <constraints>
                                                 <constraint firstItem="cbQ-BL-AaM" firstAttribute="centerX" secondItem="LDO-W3-lBA" secondAttribute="centerX" id="4KO-qg-kqb"/>
                                                 <constraint firstItem="h0x-gj-Wjp" firstAttribute="leading" secondItem="DaS-Lv-bpf" secondAttribute="leading" id="DKn-Xk-LEP"/>
-                                                <constraint firstItem="gUb-HL-r21" firstAttribute="centerX" secondItem="h0x-gj-Wjp" secondAttribute="centerX" id="Fbh-LS-Ruq"/>
                                                 <constraint firstItem="LDO-W3-lBA" firstAttribute="top" secondItem="esM-A2-YgX" secondAttribute="top" id="LQD-UQ-FQc"/>
                                                 <constraint firstAttribute="trailing" secondItem="h0x-gj-Wjp" secondAttribute="trailing" id="NUZ-ze-x3B"/>
                                                 <constraint firstItem="LDO-W3-lBA" firstAttribute="leading" secondItem="esM-A2-YgX" secondAttribute="trailing" constant="8" id="RkF-Ba-FxQ"/>
                                                 <constraint firstItem="cbQ-BL-AaM" firstAttribute="bottom" secondItem="esM-A2-YgX" secondAttribute="bottom" id="U9O-3d-23L"/>
-                                                <constraint firstItem="gUb-HL-r21" firstAttribute="centerY" secondItem="h0x-gj-Wjp" secondAttribute="centerY" id="XOR-fP-R85"/>
-                                                <constraint firstItem="uV6-b8-OdM" firstAttribute="centerX" secondItem="esM-A2-YgX" secondAttribute="centerX" id="aXu-QV-aFg"/>
                                                 <constraint firstAttribute="trailing" secondItem="LDO-W3-lBA" secondAttribute="trailing" constant="20" symbolic="YES" id="iFE-uI-5XM"/>
                                                 <constraint firstItem="esM-A2-YgX" firstAttribute="leading" secondItem="DaS-Lv-bpf" secondAttribute="leadingMargin" id="reb-lf-eeQ"/>
-                                                <constraint firstItem="uV6-b8-OdM" firstAttribute="centerY" secondItem="esM-A2-YgX" secondAttribute="centerY" id="tJg-Wc-WzV"/>
                                                 <constraint firstItem="cbQ-BL-AaM" firstAttribute="width" secondItem="LDO-W3-lBA" secondAttribute="width" id="uA6-Wm-yIV"/>
                                                 <constraint firstItem="esM-A2-YgX" firstAttribute="top" secondItem="DaS-Lv-bpf" secondAttribute="topMargin" id="v6S-ZJ-vAx"/>
                                                 <constraint firstItem="h0x-gj-Wjp" firstAttribute="top" secondItem="esM-A2-YgX" secondAttribute="bottom" constant="19" id="zhy-iy-Y82"/>
@@ -93,11 +83,9 @@
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="addressLabel" destination="cbQ-BL-AaM" id="v1U-Z7-vLq"/>
-                                            <outlet property="avatarImageView" destination="esM-A2-YgX" id="hYU-qi-0EQ"/>
-                                            <outlet property="avatarLoadingActivityIndicator" destination="uV6-b8-OdM" id="NWr-qt-gB0"/>
+                                            <outlet property="avatarView" destination="esM-A2-YgX" id="lH7-ag-Rjk"/>
                                             <outlet property="nameLabel" destination="LDO-W3-lBA" id="OoF-qZ-Ywv"/>
-                                            <outlet property="photoImageView" destination="h0x-gj-Wjp" id="p01-ae-4o6"/>
-                                            <outlet property="photoLoadingActivityIndicator" destination="gUb-HL-r21" id="SXC-Jw-RFV"/>
+                                            <outlet property="photoView" destination="h0x-gj-Wjp" id="0gR-MM-EbC"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>

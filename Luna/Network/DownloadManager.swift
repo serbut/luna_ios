@@ -11,7 +11,7 @@ import Alamofire
 
 class DownloadManager {
     static let shared = DownloadManager()
-
+    
     func downloadImage(with url: URL, completion: @escaping (UIImage?) -> Void) {
         Alamofire.request(url)
             .responseData { response in
