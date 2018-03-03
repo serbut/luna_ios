@@ -11,8 +11,9 @@ import Alamofire
 
 class DownloadManager {
     static let shared = DownloadManager()
-    
+
     func downloadImage(with url: URL, completion: @escaping (UIImage?) -> Void) {
+        DispatchQueue.main.asyncAfter(wallDeadline: .now() + 3.0, execute: {
         Alamofire.request(url)
             .responseData { response in
                 guard let data = response.result.value,
@@ -22,5 +23,6 @@ class DownloadManager {
                 }
                 completion(image)
         }
+        })
     }
 }

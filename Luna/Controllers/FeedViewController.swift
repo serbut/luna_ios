@@ -10,32 +10,61 @@ import UIKit
 
 class FeedViewController: UIViewController {
 
-    // MARK: - IBOutlets
-    @IBOutlet weak var tableView: UITableView!
-    @IBOutlet weak var footerActivityIndicator: UIActivityIndicatorView!
-    @IBOutlet weak var initialLoadingActivitiIndicator: UIActivityIndicatorView!
+    // MARK: - Views
+    lazy var tableView: UITableView = {
+        let tv = UITableView()
+        tv.dataSource = self
+        tv.delegate = self
+        tv.register(FeedItemTableViewCell.self, forCellReuseIdentifier: "FeedItem")
+        return tv
+    }()
+    
+    let footerActivityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.color = UIColor.gray
+        return activityIndicator
+    }()
+    
+    let initialLoadingActivityIndicator: UIActivityIndicatorView = {
+        let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.color = UIColor.gray
+        activityIndicator.hidesWhenStopped = true
+        activityIndicator.startAnimating()
+        return activityIndicator
+    }()
     
     // MARK: - Variables
-    var feedItems = [FeedItem]() {
+    fileprivate var feedItems = [FeedItem]() {
         didSet {
             DispatchQueue.main.async {
-                self.initialLoadingActivitiIndicator.stopAnimating()
+                self.initialLoadingActivityIndicator.stopAnimating()
             }
         }
     }
     
-    let imageCache = NSCache<NSURL, UIImage>()
+    fileprivate let imageCache = NSCache<NSURL, UIImage>()
     
-    let loadLimit = 10
-    var currentPage = 0
+    fileprivate let loadLimit = 10
+    fileprivate var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        tableView.dataSource = self
-        tableView.delegate = self
-        
+        setupViews()
+
         loadNextPage()
+    }
+    
+    func setupViews() {
+        view.addSubview(tableView)
+        view.addSubview(initialLoadingActivityIndicator)
+        
+        view.addConstraints(withFormat: "H:|[v0]|", views: tableView)
+        view.addConstraints(withFormat: "V:|[v0]|", views: tableView)
+        
+        view.addConstraints(withFormat: "H:|[v0]|", views: initialLoadingActivityIndicator)
+        view.addConstraints(withFormat: "V:|[v0]|", views: initialLoadingActivityIndicator)
+        
     }
 }
 
@@ -48,6 +77,8 @@ extension FeedViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "FeedItem") as! FeedItemTableViewCell
         
+        cell.feedItem = feedItems[indexPath.item]
+        
         configureCell(cell: cell, forItemIndex: indexPath.row)
         
         return cell
@@ -55,9 +86,6 @@ extension FeedViewController: UITableViewDataSource {
     
     private func configureCell(cell: FeedItemTableViewCell, forItemIndex itemIndex: Int) {
         let itemForCell = feedItems[itemIndex]
-        
-        cell.nameLabel.text = "\(itemIndex) \(itemForCell.name)"
-        cell.addressLabel.text = itemForCell.address.description
         
         if let avatarPath = itemForCell.avatarPath {
             cell.setAvatar(imageCache.object(forKey: avatarPath as NSURL))
@@ -119,10 +147,22 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 350
+    }
 }
 
-extension UIImageView {
-    func setImage(forPath parh: URL) {
-        
-    }
+extension FeedViewController {
+//    func setPhoto(forPath path: URL) {
+//        cell.setAvatar(imageCache.object(forKey: path as NSURL))
+//        if imageCache.object(forKey: path as NSURL) == nil {
+//            DownloadManager.shared.downloadImage(with: path) { image in
+//                if let image = image {
+//                    self.imageCache.setObject(image, forKey: path as NSURL)
+//                    cell.setAvatar(image)
+//                }
+//            }
+//        }
+//    }
 }
