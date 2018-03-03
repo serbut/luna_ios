@@ -79,37 +79,7 @@ extension FeedViewController: UITableViewDataSource {
         
         cell.feedItem = feedItems[indexPath.item]
         
-        configureCell(cell: cell, forItemIndex: indexPath.row)
-        
         return cell
-    }
-    
-    private func configureCell(cell: FeedItemTableViewCell, forItemIndex itemIndex: Int) {
-        let itemForCell = feedItems[itemIndex]
-        
-        if let avatarPath = itemForCell.avatarPath {
-            cell.setAvatar(imageCache.object(forKey: avatarPath as NSURL))
-            if imageCache.object(forKey: avatarPath as NSURL) == nil {
-                DownloadManager.shared.downloadImage(with: avatarPath) { image in
-                    if let image = image {
-                        self.imageCache.setObject(image, forKey: avatarPath as NSURL)
-                        cell.setAvatar(image)
-                    }
-                }
-            }
-        }
-        
-        if let photoPath = itemForCell.photosPath.first {
-            cell.setPhoto(imageCache.object(forKey: photoPath as NSURL))
-            if imageCache.object(forKey: photoPath as NSURL) == nil {
-                DownloadManager.shared.downloadImage(with: photoPath) { image in
-                    if let image = image {
-                        self.imageCache.setObject(image, forKey: photoPath as NSURL)
-                        cell.setPhoto(image)
-                    }
-                }
-            }
-        }
     }
     
     func tableView(_ tableView: UITableView, willDisplay cell: UITableViewCell, forRowAt indexPath: IndexPath) {
@@ -151,18 +121,4 @@ extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 350
     }
-}
-
-extension FeedViewController {
-//    func setPhoto(forPath path: URL) {
-//        cell.setAvatar(imageCache.object(forKey: path as NSURL))
-//        if imageCache.object(forKey: path as NSURL) == nil {
-//            DownloadManager.shared.downloadImage(with: path) { image in
-//                if let image = image {
-//                    self.imageCache.setObject(image, forKey: path as NSURL)
-//                    cell.setAvatar(image)
-//                }
-//            }
-//        }
-//    }
 }

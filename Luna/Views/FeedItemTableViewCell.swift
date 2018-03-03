@@ -35,7 +35,12 @@ class FeedItemTableViewCell: UITableViewCell {
         didSet {
             headerView.nameLabel.text = feedItem?.name
             headerView.addressLabel.text = feedItem?.address.description
-
+            if let avatarPath = feedItem?.avatarPath {
+                headerView.avatarView.downloadImage(withUrl: avatarPath)
+            }
+            if let photoPath = feedItem?.photosPath.first {
+                photoView.downloadImage(withUrl: photoPath)
+            }
         }
     }
     
@@ -57,13 +62,5 @@ class FeedItemTableViewCell: UITableViewCell {
         addConstraints(withFormat: "H:|[v0]|", views: headerView)
         addConstraints(withFormat: "H:|[v0]|", views: photoView)
         addConstraints(withFormat: "V:|-16-[v0(80)]-8-[v1]-[v2(1)]|", views: headerView, photoView, separatorView)
-    }
-
-    func setAvatar(_ avatar: UIImage?) {
-        headerView.avatarView.setImage(avatar)
-    }
-    
-    func setPhoto(_ photo: UIImage?) {
-        photoView.setImage(photo)
     }
 }

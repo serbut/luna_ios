@@ -7,6 +7,9 @@
 //
 
 import UIKit
+import Alamofire
+
+fileprivate let imageCache = NSCache<NSURL, UIImage>()
 
 class PhotoView: UIImageView {
 
@@ -18,15 +21,15 @@ class PhotoView: UIImageView {
         return activityIndicator
     }()
     
+    var imageUrl: URL?
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
         setupViews()
     }
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
-        
         setupViews()
     }
     
@@ -45,5 +48,26 @@ class PhotoView: UIImageView {
 
         addConstraints(withFormat: "H:|[v0]|", views: loadingActivityIndicator)
         addConstraints(withFormat: "V:|[v0]|", views: loadingActivityIndicator)
+    }
+    
+    func downloadImage(withUrl url: URL) {
+        imageUrl = url
+        self.setImage(nil)
+        
+        if let imageFromCache = imageCache.object(forKey: url as NSURL) {
+            self.setImage(imageFromCache)
+            return
+        }
+        Alamofire.request(url)
+            .responseData { response in
+                guard let data = response.result.value,
+                    let image = UIImage(data: data) else {
+                        return
+                }
+                imageCache.setObject(image, forKey: url as NSURL)
+                if self.imageUrl == url {
+                    self.setImage(image)
+                }
+        }
     }
 }
