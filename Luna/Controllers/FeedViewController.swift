@@ -64,7 +64,6 @@ class FeedViewController: UIViewController {
         
         view.addConstraints(withFormat: "H:|[v0]|", views: initialLoadingActivityIndicator)
         view.addConstraints(withFormat: "V:|[v0]|", views: initialLoadingActivityIndicator)
-        
     }
 }
 
@@ -120,5 +119,13 @@ extension FeedViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 350
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return footerActivityIndicator
+    }
+    
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+        return 80
     }
 }
