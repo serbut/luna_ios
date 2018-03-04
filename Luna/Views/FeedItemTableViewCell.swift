@@ -11,6 +11,8 @@ import UIKit
 class FeedItemTableViewCell: UITableViewCell {
     
     let cellId = "PhotoCell"
+    weak var tableView: UITableView?
+    var indexPath: IndexPath?
     
     // MARK: - Views
     let headerView: FeedItemHeaderView = {
@@ -120,10 +122,12 @@ extension FeedItemTableViewCell: UICollectionViewDataSource {
 }
 
 extension FeedItemTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.isSelected = true
-//    }
-//    
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        if let tableView = tableView {
+            tableView.delegate?.tableView?(tableView, didSelectRowAt: indexPath)
+        }
+    }
+
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pageControl.currentPage = indexPath.item
     }

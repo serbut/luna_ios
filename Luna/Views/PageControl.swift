@@ -21,6 +21,7 @@ class PageControl: UIPageControl {
     }
     
     func setup() {
+        isUserInteractionEnabled = false
         pageIndicatorTintColor = UIColor.mainColor.withAlphaComponent(0.5)
         currentPageIndicatorTintColor = UIColor.mainColor
     }

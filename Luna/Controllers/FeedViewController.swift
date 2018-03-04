@@ -77,6 +77,8 @@ extension FeedViewController: UITableViewDataSource {
         let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! FeedItemTableViewCell
         
         cell.feedItem = feedItems[indexPath.item]
+        cell.tableView = tableView
+        cell.indexPath = indexPath
         
         return cell
     }
