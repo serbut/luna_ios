@@ -10,6 +10,8 @@
 		07349DA9204AC41700E69FCA /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DA8204AC41700E69FCA /* UIView+Constraints.swift */; };
 		07349DAB204AD33200E69FCA /* FeedItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DAA204AD33200E69FCA /* FeedItemHeaderView.swift */; };
 		07349DAD204AFB0700E69FCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07349DAC204AFB0700E69FCA /* Main.storyboard */; };
+		07349DB3204C2C0300E69FCA /* SlidingPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DB2204C2C0300E69FCA /* SlidingPhotosView.swift */; };
+		07349DB5204C32EF00E69FCA /* SlidingPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */; };
 		07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */; };
 		07382E33202A26B80024459B /* FeedViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 07382E32202A26B80024459B /* FeedViewController.graphql */; };
 		07382E36202A34E10024459B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E35202A34E00024459B /* API.swift */; };
@@ -18,7 +20,6 @@
 		0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA23202B924C00D692F8 /* FeedManager.swift */; };
 		07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */; };
 		07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */; };
-		07CA33AD201A7AB700E2B8D7 /* Luna.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33AB201A7AB700E2B8D7 /* Luna.xcdatamodeld */; };
 		07CA33AF201A7AB700E2B8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */; };
 		07CA33B2201A7AB700E2B8D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33B0201A7AB700E2B8D7 /* LaunchScreen.storyboard */; };
 		07CA33BD201A7AB700E2B8D7 /* LunaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33BC201A7AB700E2B8D7 /* LunaTests.swift */; };
@@ -40,6 +41,8 @@
 		07349DA8204AC41700E69FCA /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
 		07349DAA204AD33200E69FCA /* FeedItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemHeaderView.swift; sourceTree = "<group>"; };
 		07349DAC204AFB0700E69FCA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		07349DB2204C2C0300E69FCA /* SlidingPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPhotosView.swift; sourceTree = "<group>"; };
+		07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPhotoViewCell.swift; sourceTree = "<group>"; };
 		07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTableViewCell.swift; sourceTree = "<group>"; };
 		07382E32202A26B80024459B /* FeedViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedViewController.graphql; sourceTree = "<group>"; };
 		07382E35202A34E00024459B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Luna/API.swift; sourceTree = SOURCE_ROOT; };
@@ -49,7 +52,6 @@
 		07CA33A1201A7AB700E2B8D7 /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
-		07CA33AC201A7AB700E2B8D7 /* Luna.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Luna.xcdatamodel; sourceTree = "<group>"; };
 		07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07CA33B1201A7AB700E2B8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07CA33B3201A7AB700E2B8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -112,11 +114,11 @@
 		07382E2B202A17150024459B /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				076CFE882030B2B10021E452 /* PhotoView.swift */,
 				07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */,
 				07349DAA204AD33200E69FCA /* FeedItemHeaderView.swift */,
-				07349DAC204AFB0700E69FCA /* Main.storyboard */,
-				07CA33B0201A7AB700E2B8D7 /* LaunchScreen.storyboard */,
+				076CFE882030B2B10021E452 /* PhotoView.swift */,
+				07349DB2204C2C0300E69FCA /* SlidingPhotosView.swift */,
+				07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -160,16 +162,17 @@
 		07CA33A3201A7AB700E2B8D7 /* Luna */ = {
 			isa = PBXGroup;
 			children = (
-				07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */,
 				07349DA7204AC3EF00E69FCA /* Extensions */,
 				07382E2C202A17290024459B /* Models */,
 				07382E2B202A17150024459B /* Views */,
 				07382E27202A04950024459B /* Controllers */,
 				07382E28202A04C20024459B /* GraphQL */,
 				0780CA19202B18C800D692F8 /* Network */,
+				07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */,
 				07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */,
+				07349DAC204AFB0700E69FCA /* Main.storyboard */,
+				07CA33B0201A7AB700E2B8D7 /* LaunchScreen.storyboard */,
 				07CA33B3201A7AB700E2B8D7 /* Info.plist */,
-				07CA33AB201A7AB700E2B8D7 /* Luna.xcdatamodeld */,
 			);
 			path = Luna;
 			sourceTree = "<group>";
@@ -435,8 +438,9 @@
 				07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */,
 				07349DAB204AD33200E69FCA /* FeedItemHeaderView.swift in Sources */,
 				076CFE892030B2B10021E452 /* PhotoView.swift in Sources */,
-				07CA33AD201A7AB700E2B8D7 /* Luna.xcdatamodeld in Sources */,
 				07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */,
+				07349DB3204C2C0300E69FCA /* SlidingPhotosView.swift in Sources */,
+				07349DB5204C32EF00E69FCA /* SlidingPhotoViewCell.swift in Sources */,
 				07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */,
 				0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */,
 				07349DA9204AC41700E69FCA /* UIView+Constraints.swift in Sources */,
@@ -683,19 +687,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		07CA33AB201A7AB700E2B8D7 /* Luna.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				07CA33AC201A7AB700E2B8D7 /* Luna.xcdatamodel */,
-			);
-			currentVersion = 07CA33AC201A7AB700E2B8D7 /* Luna.xcdatamodel */;
-			path = Luna.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 07CA3399201A7AB700E2B8D7 /* Project object */;
 }

@@ -9,13 +9,15 @@
 import UIKit
 
 class FeedViewController: UIViewController {
+    
+    let cellId = "FeedItem"
 
     // MARK: - Views
     lazy var tableView: UITableView = {
         let tv = UITableView()
         tv.dataSource = self
         tv.delegate = self
-        tv.register(FeedItemTableViewCell.self, forCellReuseIdentifier: "FeedItem")
+        tv.register(FeedItemTableViewCell.self, forCellReuseIdentifier: cellId)
         return tv
     }()
     
@@ -41,17 +43,14 @@ class FeedViewController: UIViewController {
             }
         }
     }
-    
-    fileprivate let imageCache = NSCache<NSURL, UIImage>()
-    
+        
     fileprivate let loadLimit = 10
     fileprivate var currentPage = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    
         setupViews()
-
         loadNextPage()
     }
     
@@ -74,7 +73,7 @@ extension FeedViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "FeedItem") as! FeedItemTableViewCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellId) as! FeedItemTableViewCell
         
         cell.feedItem = feedItems[indexPath.item]
         

@@ -21,7 +21,6 @@ class FeedItemHeaderView: UIView {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.textColor = UIColor(red: 71/255, green: 94/255, blue: 215/255, alpha: 1)
         label.font = UIFont.boldSystemFont(ofSize: 25)
         return label
     }()

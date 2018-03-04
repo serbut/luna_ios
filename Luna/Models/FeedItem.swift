@@ -14,7 +14,7 @@ struct FeedItem {
     let name: String
     let address: String
     let avatarPath: URL?
-    var photosPath: [URL]
+    var photosPaths: [URL]
     let stars: Double
     
     init(from graphQLFeedItem: FeedQuery.Data.Feed) {
@@ -22,7 +22,7 @@ struct FeedItem {
         self.name = graphQLFeedItem.name
         self.address = graphQLFeedItem.address.description
         self.avatarPath = URL(string: graphQLFeedItem.avatar.path)
-        self.photosPath = graphQLFeedItem.photos.flatMap { URL(string: $0.path) }
+        self.photosPaths = graphQLFeedItem.photos.flatMap { URL(string: $0.path) }
         self.stars = graphQLFeedItem.stars
     }
 }

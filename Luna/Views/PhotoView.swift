@@ -17,7 +17,6 @@ class PhotoView: UIImageView {
         let activityIndicator = UIActivityIndicatorView()
         activityIndicator.color = UIColor.gray
         activityIndicator.hidesWhenStopped = true
-        activityIndicator.startAnimating()
         return activityIndicator
     }()
     
