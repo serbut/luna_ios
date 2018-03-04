@@ -21,6 +21,7 @@
 		07A1996E204C7D6500231087 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1996D204C7D6500231087 /* PriceLabel.swift */; };
 		07A19970204C7F5800231087 /* UIColor+Luna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1996F204C7F5800231087 /* UIColor+Luna.swift */; };
 		07A19972204C893A00231087 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19971204C893A00231087 /* PageControl.swift */; };
+		07A19974204C8BD900231087 /* MetroCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19973204C8BD900231087 /* MetroCircleView.swift */; };
 		07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */; };
 		07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */; };
 		07CA33AF201A7AB700E2B8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */; };
@@ -55,6 +56,7 @@
 		07A1996D204C7D6500231087 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
 		07A1996F204C7F5800231087 /* UIColor+Luna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Luna.swift"; sourceTree = "<group>"; };
 		07A19971204C893A00231087 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		07A19973204C8BD900231087 /* MetroCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroCircleView.swift; sourceTree = "<group>"; };
 		07CA33A1201A7AB700E2B8D7 /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 				07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */,
 				07A1996D204C7D6500231087 /* PriceLabel.swift */,
 				07A19971204C893A00231087 /* PageControl.swift */,
+				07A19973204C8BD900231087 /* MetroCircleView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -444,6 +447,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A19974204C8BD900231087 /* MetroCircleView.swift in Sources */,
 				07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */,
 				07349DAB204AD33200E69FCA /* FeedItemHeaderView.swift in Sources */,
 				076CFE892030B2B10021E452 /* PhotoView.swift in Sources */,
