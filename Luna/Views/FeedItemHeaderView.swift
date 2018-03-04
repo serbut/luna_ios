@@ -21,12 +21,13 @@ class FeedItemHeaderView: UIView {
     
     let nameLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont.boldSystemFont(ofSize: 25)
+        label.font = UIFont.boldSystemFont(ofSize: 14)
         return label
     }()
     
     let addressLabel: UILabel = {
         let label = UILabel()
+        label.font = UIFont.systemFont(ofSize: 14)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -46,9 +47,9 @@ class FeedItemHeaderView: UIView {
         addSubview(nameLabel)
         addSubview(addressLabel)
         
-        addConstraints(withFormat: "H:|-16-[v0(44)]-8-[v1]-16-|", views: avatarView, nameLabel)
-        addConstraints(withFormat: "V:|-16-[v0]-16-|", views: avatarView)
-        addConstraints(withFormat: "V:|-16-[v0(20)]-8-[v1(20)]-16-|", views: nameLabel, addressLabel)
+        addConstraints(withFormat: "H:|-16-[v0(40)]-8-[v1]-16-|", views: avatarView, nameLabel)
+        addConstraints(withFormat: "V:|[v0]|", views: avatarView)
+        addConstraints(withFormat: "V:|[v0(20)][v1(20)]|", views: nameLabel, addressLabel)
         
         addConstraint(NSLayoutConstraint(item: addressLabel, attribute: .width, relatedBy: .equal, toItem: nameLabel, attribute: .width, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: addressLabel, attribute: .centerX, relatedBy: .equal, toItem: nameLabel, attribute: .centerX, multiplier: 1, constant: 0))

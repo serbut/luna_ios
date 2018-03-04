@@ -29,12 +29,7 @@ class FeedItemTableViewCell: UITableViewCell {
         return photoView
     }()
     
-    var pageControl: UIPageControl = {
-        let pc = UIPageControl()
-        pc.pageIndicatorTintColor = UIColor.lightGray
-        pc.currentPageIndicatorTintColor = UIColor.darkGray
-        return pc
-    }()
+    var pageControl = PageControl()
     
     let separatorView: UIView = {
         let view = UIView()
@@ -51,24 +46,30 @@ class FeedItemTableViewCell: UITableViewCell {
     // MARK: - Variables
     var feedItem: FeedItem? {
         didSet {
-            headerView.nameLabel.text = feedItem?.name
-            headerView.addressLabel.text = feedItem?.address.description
-            priceLabel.text = "2 500 – 3 000 ₽"
-            if let avatarPath = feedItem?.avatarPath {
-                headerView.avatarView.downloadImage(withUrl: avatarPath)
+            if let item = feedItem {
+                configureCell(withItem: item)
             }
-            if let photosCount = feedItem?.photosPaths.count,
-                photosCount > 1,
-                let currentPhotoIndex = feedItem?.selectedPhotoIndex {
-                pageControl.currentPage = currentPhotoIndex
-                pageControl.numberOfPages = photosCount
-                let indexPath = IndexPath(item: currentPhotoIndex, section: 0)
-                slidingPhotoView.scrollToItem(at: indexPath, at: .bottom, animated: false)
-            } else {
-                pageControl.isHidden = true
-            }
-            slidingPhotoView.reloadData()
         }
+    }
+    
+    private func configureCell(withItem item: FeedItem) {
+        headerView.nameLabel.text = item.name
+        headerView.addressLabel.text = item.address.description
+        priceLabel.text = "2 500 – 3 000 ₽"
+        if let avatarPath = item.avatarPath {
+            headerView.avatarView.downloadImage(withUrl: avatarPath)
+        }
+        let photosCount = item.photosPaths.count
+        if photosCount > 1,
+            let currentPhotoIndex = item.selectedPhotoIndex {
+            pageControl.currentPage = currentPhotoIndex
+            pageControl.numberOfPages = photosCount
+            let indexPath = IndexPath(item: currentPhotoIndex, section: 0)
+            slidingPhotoView.scrollToItem(at: indexPath, at: .bottom, animated: false)
+        } else {
+            pageControl.isHidden = true
+        }
+        slidingPhotoView.reloadData()
     }
     
     override init(style: UITableViewCellStyle, reuseIdentifier: String?) {
@@ -91,7 +92,7 @@ class FeedItemTableViewCell: UITableViewCell {
         addConstraints(withFormat: "H:|[v0]|", views: headerView)
         addConstraints(withFormat: "H:|[v0]|", views: slidingPhotoView)
         addConstraints(withFormat: "H:|[v0]|", views: pageControl)
-        addConstraints(withFormat: "V:|-16-[v0(80)]-8-[v1]-8-[v2]-8-[v3(1)]|", views: headerView, slidingPhotoView, pageControl, separatorView)
+        addConstraints(withFormat: "V:|-16-[v0(40)]-16-[v1][v2]-8-[v3(1)]|", views: headerView, slidingPhotoView, pageControl, separatorView)
         addConstraints(withFormat: "H:|-16-[v0]", views: priceLabel)
         addConstraint(NSLayoutConstraint(item: priceLabel, attribute: .top, relatedBy: .equal, toItem: slidingPhotoView, attribute: .top, multiplier: 1, constant: 18))
     }
@@ -119,10 +120,10 @@ extension FeedItemTableViewCell: UICollectionViewDataSource {
 }
 
 extension FeedItemTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.isSelected = true
-    }
-    
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.isSelected = true
+//    }
+//    
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pageControl.currentPage = indexPath.item
     }
