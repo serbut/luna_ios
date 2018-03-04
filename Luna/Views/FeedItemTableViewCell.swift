@@ -42,11 +42,18 @@ class FeedItemTableViewCell: UITableViewCell {
         return view
     }()
     
+    let priceLabel: PriceLabel = {
+        let label = PriceLabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        return label
+    }()
+    
     // MARK: - Variables
     var feedItem: FeedItem? {
         didSet {
             headerView.nameLabel.text = feedItem?.name
             headerView.addressLabel.text = feedItem?.address.description
+            priceLabel.text = "2 500 – 3 000 ₽"
             if let avatarPath = feedItem?.avatarPath {
                 headerView.avatarView.downloadImage(withUrl: avatarPath)
             }
@@ -79,11 +86,14 @@ class FeedItemTableViewCell: UITableViewCell {
         addSubview(slidingPhotoView)
         addSubview(separatorView)
         addSubview(pageControl)
+        addSubview(priceLabel)
 
         addConstraints(withFormat: "H:|[v0]|", views: headerView)
         addConstraints(withFormat: "H:|[v0]|", views: slidingPhotoView)
         addConstraints(withFormat: "H:|[v0]|", views: pageControl)
         addConstraints(withFormat: "V:|-16-[v0(80)]-8-[v1]-8-[v2]-8-[v3(1)]|", views: headerView, slidingPhotoView, pageControl, separatorView)
+        addConstraints(withFormat: "H:|-16-[v0]", views: priceLabel)
+        addConstraint(NSLayoutConstraint(item: priceLabel, attribute: .top, relatedBy: .equal, toItem: slidingPhotoView, attribute: .top, multiplier: 1, constant: 18))
     }
 }
 
@@ -109,9 +119,9 @@ extension FeedItemTableViewCell: UICollectionViewDataSource {
 }
 
 extension FeedItemTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
-//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-//        self.isSelected = true
-//    }
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        self.isSelected = true
+    }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
         pageControl.currentPage = indexPath.item

@@ -18,6 +18,8 @@
 		076CFE892030B2B10021E452 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CFE882030B2B10021E452 /* PhotoView.swift */; };
 		0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA1F202B20F800D692F8 /* FeedItem.swift */; };
 		0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA23202B924C00D692F8 /* FeedManager.swift */; };
+		07A1996E204C7D6500231087 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1996D204C7D6500231087 /* PriceLabel.swift */; };
+		07A19970204C7F5800231087 /* UIColor+Luna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1996F204C7F5800231087 /* UIColor+Luna.swift */; };
 		07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */; };
 		07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */; };
 		07CA33AF201A7AB700E2B8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */; };
@@ -49,6 +51,8 @@
 		076CFE882030B2B10021E452 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		0780CA1F202B20F800D692F8 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		0780CA23202B924C00D692F8 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
+		07A1996D204C7D6500231087 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
+		07A1996F204C7F5800231087 /* UIColor+Luna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Luna.swift"; sourceTree = "<group>"; };
 		07CA33A1201A7AB700E2B8D7 /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -90,6 +94,7 @@
 			isa = PBXGroup;
 			children = (
 				07349DA8204AC41700E69FCA /* UIView+Constraints.swift */,
+				07A1996F204C7F5800231087 /* UIColor+Luna.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -119,6 +124,7 @@
 				076CFE882030B2B10021E452 /* PhotoView.swift */,
 				07349DB2204C2C0300E69FCA /* SlidingPhotosView.swift */,
 				07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */,
+				07A1996D204C7D6500231087 /* PriceLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -441,7 +447,9 @@
 				07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */,
 				07349DB3204C2C0300E69FCA /* SlidingPhotosView.swift in Sources */,
 				07349DB5204C32EF00E69FCA /* SlidingPhotoViewCell.swift in Sources */,
+				07A1996E204C7D6500231087 /* PriceLabel.swift in Sources */,
 				07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */,
+				07A19970204C7F5800231087 /* UIColor+Luna.swift in Sources */,
 				0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */,
 				07349DA9204AC41700E69FCA /* UIView+Constraints.swift in Sources */,
 				0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */,
