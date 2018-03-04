@@ -23,10 +23,17 @@ class FeedItemTableViewCell: UITableViewCell {
         let photoView = SlidingPhotosView(frame: .zero, collectionViewLayout: layout)
 
         photoView.dataSource = self
-        photoView.allowsSelection = false
+        photoView.delegate = self
         photoView.register(SlidingPhotoViewCell.self, forCellWithReuseIdentifier: cellId)
         
         return photoView
+    }()
+    
+    var pageControl: UIPageControl = {
+        let pc = UIPageControl()
+        pc.pageIndicatorTintColor = UIColor.lightGray
+        pc.currentPageIndicatorTintColor = UIColor.darkGray
+        return pc
     }()
     
     let separatorView: UIView = {
@@ -42,6 +49,16 @@ class FeedItemTableViewCell: UITableViewCell {
             headerView.addressLabel.text = feedItem?.address.description
             if let avatarPath = feedItem?.avatarPath {
                 headerView.avatarView.downloadImage(withUrl: avatarPath)
+            }
+            if let photosCount = feedItem?.photosPaths.count,
+                photosCount > 1,
+                let currentPhotoIndex = feedItem?.selectedPhotoIndex {
+                pageControl.currentPage = currentPhotoIndex
+                pageControl.numberOfPages = photosCount
+                let indexPath = IndexPath(item: currentPhotoIndex, section: 0)
+                slidingPhotoView.scrollToItem(at: indexPath, at: .bottom, animated: false)
+            } else {
+                pageControl.isHidden = true
             }
             slidingPhotoView.reloadData()
         }
@@ -61,10 +78,12 @@ class FeedItemTableViewCell: UITableViewCell {
         addSubview(headerView)
         addSubview(slidingPhotoView)
         addSubview(separatorView)
+        addSubview(pageControl)
 
         addConstraints(withFormat: "H:|[v0]|", views: headerView)
         addConstraints(withFormat: "H:|[v0]|", views: slidingPhotoView)
-        addConstraints(withFormat: "V:|-16-[v0(80)]-8-[v1]-[v2(1)]|", views: headerView, slidingPhotoView, separatorView)
+        addConstraints(withFormat: "H:|[v0]|", views: pageControl)
+        addConstraints(withFormat: "V:|-16-[v0(80)]-8-[v1]-8-[v2]-8-[v3(1)]|", views: headerView, slidingPhotoView, pageControl, separatorView)
     }
 }
 
@@ -86,5 +105,19 @@ extension FeedItemTableViewCell: UICollectionViewDataSource {
             cell.photoView.downloadImage(withUrl: photoPath)
         }
         return cell
+    }
+}
+
+extension FeedItemTableViewCell: UICollectionViewDelegate, UICollectionViewDelegateFlowLayout {
+//    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+//        self.isSelected = true
+//    }
+    
+    func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        pageControl.currentPage = indexPath.item
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: slidingPhotoView.frame.width, height: slidingPhotoView.frame.height)
     }
 }

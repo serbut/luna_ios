@@ -8,7 +8,7 @@
 
 import UIKit
 
-class SlidingPhotosView: UICollectionView, UICollectionViewDelegateFlowLayout {
+class SlidingPhotosView: UICollectionView {
     
     override init(frame: CGRect, collectionViewLayout layout: UICollectionViewLayout) {
         super.init(frame: frame, collectionViewLayout: layout)
@@ -26,13 +26,8 @@ class SlidingPhotosView: UICollectionView, UICollectionViewDelegateFlowLayout {
             flowLayout.minimumLineSpacing = 0
         }
         
-        delegate = self
         isPagingEnabled = true
         showsHorizontalScrollIndicator = false
         backgroundColor = UIColor.white
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        return CGSize(width: frame.width, height: frame.height)
     }
 }

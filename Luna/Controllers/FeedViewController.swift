@@ -29,6 +29,7 @@ class FeedViewController: UIViewController {
     
     let initialLoadingActivityIndicator: UIActivityIndicatorView = {
         let activityIndicator = UIActivityIndicatorView()
+        activityIndicator.activityIndicatorViewStyle = .whiteLarge
         activityIndicator.color = UIColor.gray
         activityIndicator.hidesWhenStopped = true
         activityIndicator.startAnimating()
@@ -54,7 +55,7 @@ class FeedViewController: UIViewController {
         loadNextPage()
     }
     
-    func setupViews() {
+    func setupViews() {        
         view.addSubview(tableView)
         view.addSubview(initialLoadingActivityIndicator)
         
@@ -113,11 +114,14 @@ extension FeedViewController: UITableViewDataSource {
 // MARK: - Table View Delegate
 extension FeedViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let vc = UIViewController()
+        vc.view.backgroundColor = UIColor.white
+        self.navigationController?.pushViewController(vc, animated: true)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 350
+        return 400
     }
     
     func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {

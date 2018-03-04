@@ -16,6 +16,7 @@ struct FeedItem {
     let avatarPath: URL?
     var photosPaths: [URL]
     let stars: Double
+    var selectedPhotoIndex: Int?
     
     init(from graphQLFeedItem: FeedQuery.Data.Feed) {
         self.id = graphQLFeedItem.id
@@ -23,6 +24,9 @@ struct FeedItem {
         self.address = graphQLFeedItem.address.description
         self.avatarPath = URL(string: graphQLFeedItem.avatar.path)
         self.photosPaths = graphQLFeedItem.photos.flatMap { URL(string: $0.path) }
+        if !photosPaths.isEmpty {
+            selectedPhotoIndex = 0
+        }
         self.stars = graphQLFeedItem.stars
     }
 }
