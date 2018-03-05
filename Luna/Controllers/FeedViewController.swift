@@ -98,7 +98,7 @@ extension FeedViewController: UITableViewDataSource {
             
             if (!items.isEmpty) {
                 DispatchQueue.global(qos: .userInitiated).async {
-                    let newItems = items.map { FeedItem(from: $0) }
+                    let newItems = items.map { FeedItem(with: $0) }
                     let indexPaths = newItems.indices.map { IndexPath(row: $0 + self.feedItems.count, section: 0) }
                     self.feedItems.append(contentsOf: newItems)
                     DispatchQueue.main.async {

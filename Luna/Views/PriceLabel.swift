@@ -8,21 +8,12 @@
 
 import UIKit
 
-class PriceLabel: UILabel {
+class PriceLabel: LunaLabel {
     
     let padding = UIEdgeInsets(top: 4, left: 12, bottom: 4, right: 12)
-
-    override init(frame: CGRect) {
-        super.init(frame: frame)
-        setup()
-    }
     
-    required init?(coder aDecoder: NSCoder) {
-        super.init(coder: aDecoder)
-        setup()
-    }
-    
-    func setup() {
+    override func setup() {
+        super.setup()
         backgroundColor = UIColor.mainColor.withAlphaComponent(0.7)
         textColor = UIColor.white
         layer.masksToBounds = true

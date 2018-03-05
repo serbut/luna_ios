@@ -12,17 +12,17 @@ import Apollo
 struct FeedItem {
     let id: String
     let name: String
-    let address: String
+    let address: Address
     let avatarPath: URL?
     var photosPaths: [URL]
     let stars: Double
     var selectedPhotoIndex: Int?
     
-    init(from graphQLFeedItem: FeedQuery.Data.Feed) {
+    init(with graphQLFeedItem: FeedQuery.Data.Feed) {
         self.id = graphQLFeedItem.id
         self.name = graphQLFeedItem.name
-        self.address = graphQLFeedItem.address.description
-        self.avatarPath = URL(string: graphQLFeedItem.avatar.path)
+        self.address = Address(with: graphQLFeedItem.address)
+        self.avatarPath = URL(string: graphQLFeedItem.avatar?.path ?? "")
         self.photosPaths = graphQLFeedItem.photos.flatMap { URL(string: $0.path) }
         if !photosPaths.isEmpty {
             selectedPhotoIndex = 0

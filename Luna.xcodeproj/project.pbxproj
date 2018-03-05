@@ -14,7 +14,6 @@
 		07349DB5204C32EF00E69FCA /* SlidingPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */; };
 		07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */; };
 		07382E33202A26B80024459B /* FeedViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 07382E32202A26B80024459B /* FeedViewController.graphql */; };
-		07382E36202A34E10024459B /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E35202A34E00024459B /* API.swift */; };
 		076CFE892030B2B10021E452 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CFE882030B2B10021E452 /* PhotoView.swift */; };
 		0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA1F202B20F800D692F8 /* FeedItem.swift */; };
 		0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA23202B924C00D692F8 /* FeedManager.swift */; };
@@ -22,6 +21,10 @@
 		07A19970204C7F5800231087 /* UIColor+Luna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1996F204C7F5800231087 /* UIColor+Luna.swift */; };
 		07A19972204C893A00231087 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19971204C893A00231087 /* PageControl.swift */; };
 		07A19974204C8BD900231087 /* MetroCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19973204C8BD900231087 /* MetroCircleView.swift */; };
+		07A19978204D256600231087 /* MetroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19977204D256600231087 /* MetroView.swift */; };
+		07A1997A204D280A00231087 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19979204D280A00231087 /* API.swift */; };
+		07A1997E204D423F00231087 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1997D204D423F00231087 /* Address.swift */; };
+		07A19980204D4B7D00231087 /* LunaLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1997F204D4B7D00231087 /* LunaLabel.swift */; };
 		07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */; };
 		07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */; };
 		07CA33AF201A7AB700E2B8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */; };
@@ -49,7 +52,6 @@
 		07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPhotoViewCell.swift; sourceTree = "<group>"; };
 		07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTableViewCell.swift; sourceTree = "<group>"; };
 		07382E32202A26B80024459B /* FeedViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedViewController.graphql; sourceTree = "<group>"; };
-		07382E35202A34E00024459B /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Luna/API.swift; sourceTree = SOURCE_ROOT; };
 		076CFE882030B2B10021E452 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
 		0780CA1F202B20F800D692F8 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
 		0780CA23202B924C00D692F8 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
@@ -57,6 +59,10 @@
 		07A1996F204C7F5800231087 /* UIColor+Luna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Luna.swift"; sourceTree = "<group>"; };
 		07A19971204C893A00231087 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
 		07A19973204C8BD900231087 /* MetroCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroCircleView.swift; sourceTree = "<group>"; };
+		07A19977204D256600231087 /* MetroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroView.swift; sourceTree = "<group>"; };
+		07A19979204D280A00231087 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Luna/API.swift; sourceTree = SOURCE_ROOT; };
+		07A1997D204D423F00231087 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		07A1997F204D4B7D00231087 /* LunaLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaLabel.swift; sourceTree = "<group>"; };
 		07CA33A1201A7AB700E2B8D7 /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
@@ -114,7 +120,7 @@
 		07382E28202A04C20024459B /* GraphQL */ = {
 			isa = PBXGroup;
 			children = (
-				07382E35202A34E00024459B /* API.swift */,
+				07A19979204D280A00231087 /* API.swift */,
 				07382E32202A26B80024459B /* FeedViewController.graphql */,
 			);
 			path = GraphQL;
@@ -131,6 +137,8 @@
 				07A1996D204C7D6500231087 /* PriceLabel.swift */,
 				07A19971204C893A00231087 /* PageControl.swift */,
 				07A19973204C8BD900231087 /* MetroCircleView.swift */,
+				07A19977204D256600231087 /* MetroView.swift */,
+				07A1997F204D4B7D00231087 /* LunaLabel.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -139,6 +147,7 @@
 			isa = PBXGroup;
 			children = (
 				0780CA1F202B20F800D692F8 /* FeedItem.swift */,
+				07A1997D204D423F00231087 /* Address.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -447,8 +456,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				07A1997E204D423F00231087 /* Address.swift in Sources */,
 				07A19974204C8BD900231087 /* MetroCircleView.swift in Sources */,
 				07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */,
+				07A19978204D256600231087 /* MetroView.swift in Sources */,
 				07349DAB204AD33200E69FCA /* FeedItemHeaderView.swift in Sources */,
 				076CFE892030B2B10021E452 /* PhotoView.swift in Sources */,
 				07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */,
@@ -460,8 +471,9 @@
 				0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */,
 				07A19972204C893A00231087 /* PageControl.swift in Sources */,
 				07349DA9204AC41700E69FCA /* UIView+Constraints.swift in Sources */,
+				07A1997A204D280A00231087 /* API.swift in Sources */,
+				07A19980204D4B7D00231087 /* LunaLabel.swift in Sources */,
 				0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */,
-				07382E36202A34E10024459B /* API.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

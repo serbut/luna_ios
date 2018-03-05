@@ -56,14 +56,30 @@ class FeedItemTableViewCell: UITableViewCell {
     
     private func configureCell(withItem item: FeedItem) {
         headerView.nameLabel.text = item.name
-        headerView.addressLabel.text = item.address.description
+        headerView.addressLabel.text = item.address.details
+        setupMetroView(with: item.address.nearestStation)
         priceLabel.text = "2 500 – 3 000 ₽"
-        if let avatarPath = item.avatarPath {
+        setupAvatar(with: item.avatarPath)
+        setupPhotosView(with: item.photosPaths, currentIndex: item.selectedPhotoIndex)
+    }
+    
+    private func setupMetroView(with stationInfo: MetroStation?) {
+        if let station = stationInfo {
+            headerView.metroView.circleView.backgroundColor = station.lineColor
+            headerView.metroView.stationLabel.text = station.name
+        }
+    }
+    
+    private func setupAvatar(with path: URL?) {
+        if let avatarPath = path {
             headerView.avatarView.downloadImage(withUrl: avatarPath)
         }
-        let photosCount = item.photosPaths.count
+    }
+    
+    private func setupPhotosView(with paths: [URL], currentIndex: Int?) {
+        let photosCount = paths.count
         if photosCount > 1,
-            let currentPhotoIndex = item.selectedPhotoIndex {
+            let currentPhotoIndex = currentIndex {
             pageControl.currentPage = currentPhotoIndex
             pageControl.numberOfPages = photosCount
             let indexPath = IndexPath(item: currentPhotoIndex, section: 0)

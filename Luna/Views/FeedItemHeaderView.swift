@@ -25,11 +25,7 @@ class FeedItemHeaderView: UIView {
         return label
     }()
     
-    let metroView: MetroCircleView = {
-        let view = MetroCircleView()
-        view.backgroundColor = UIColor.darkGray
-        return view
-    }()
+    let metroView = MetroView()
     
     let addressLabel: UILabel = {
         let label = UILabel()
@@ -53,17 +49,16 @@ class FeedItemHeaderView: UIView {
         addSubview(nameLabel)
         addSubview(metroView)
         addSubview(addressLabel)
-        
+                
         addConstraints(withFormat: "H:|-16-[v0(40)]-8-[v1]-16-|", views: avatarView, nameLabel)
         addConstraints(withFormat: "V:|[v0]|", views: avatarView)
         addConstraints(withFormat: "V:|[v0(20)][v1(20)]|", views: nameLabel, addressLabel)
-        addConstraints(withFormat: "H:[v0(8)]-4-[v1]", views: metroView, addressLabel)
+        addConstraints(withFormat: "H:[v0]-4-[v1]", views: metroView, addressLabel)
         
         addConstraint(NSLayoutConstraint(item: metroView, attribute: .left, relatedBy: .equal, toItem: nameLabel, attribute: .left, multiplier: 1, constant: 0))
         addConstraint(NSLayoutConstraint(item: metroView, attribute: .centerY, relatedBy: .equal, toItem: addressLabel, attribute: .centerY, multiplier: 1, constant: 0))
-        addConstraint(NSLayoutConstraint(item: metroView, attribute: .height, relatedBy: .equal, toItem: metroView, attribute: .width, multiplier: 1, constant: 0))
+        addConstraint(NSLayoutConstraint(item: metroView, attribute: .height, relatedBy: .equal, toItem: addressLabel, attribute: .height, multiplier: 1, constant: 0))
         
-        addConstraint(NSLayoutConstraint(item: addressLabel, attribute: .left, relatedBy: .equal, toItem: metroView, attribute: .right, multiplier: 1, constant: 4))
-        addConstraint(NSLayoutConstraint(item: addressLabel, attribute: .right, relatedBy: .equal, toItem: nameLabel, attribute: .right, multiplier: 1, constant: 0))  
+        addConstraint(NSLayoutConstraint(item: addressLabel, attribute: .right, relatedBy: .lessThanOrEqual, toItem: nameLabel, attribute: .right, multiplier: 1, constant: 0))
     }
 }

@@ -3,7 +3,15 @@ query Feed($limit: Int!, $offset: Int!) {
         id
         name
         address {
+            lat
+            lon
             description
+            stations {
+                color
+                distance
+                line
+                name
+            }
         }
         avatar {
             path
