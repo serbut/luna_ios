@@ -33,6 +33,8 @@ class FeedItemTableViewCell: UITableViewCell {
     
     var pageControl = PageControl()
     
+    let ratingView = RatingView()
+    
     let separatorView: UIView = {
         let view = UIView()
         view.backgroundColor = UIColor.lightGray
@@ -61,6 +63,7 @@ class FeedItemTableViewCell: UITableViewCell {
         priceLabel.text = "2 500 – 3 000 ₽"
         setupAvatar(with: item.avatarPath)
         setupPhotosView(with: item.photosPaths, currentIndex: item.selectedPhotoIndex)
+        ratingView.show(rating: 5)
     }
     
     private func setupMetroView(with stationInfo: MetroStation?) {
@@ -103,15 +106,18 @@ class FeedItemTableViewCell: UITableViewCell {
     private func setupViews() {
         addSubview(headerView)
         addSubview(slidingPhotoView)
-        addSubview(separatorView)
+        addSubview(ratingView)
         addSubview(pageControl)
         addSubview(priceLabel)
+        addSubview(separatorView)
 
         addConstraints(withFormat: "H:|[v0]|", views: headerView)
         addConstraints(withFormat: "H:|[v0]|", views: slidingPhotoView)
         addConstraints(withFormat: "H:|[v0]|", views: pageControl)
         addConstraints(withFormat: "V:|-16-[v0(40)]-16-[v1][v2]-8-[v3(1)]|", views: headerView, slidingPhotoView, pageControl, separatorView)
         addConstraints(withFormat: "H:|-16-[v0]", views: priceLabel)
+        addConstraints(withFormat: "H:|-16-[v0]", views: ratingView)
+        addConstraints(withFormat: "V:[v0(20)]-16-|", views: ratingView)
         addConstraint(NSLayoutConstraint(item: priceLabel, attribute: .top, relatedBy: .equal, toItem: slidingPhotoView, attribute: .top, multiplier: 1, constant: 18))
     }
 }
