@@ -7,13 +7,32 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		07349DA9204AC41700E69FCA /* UIView+Constraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DA8204AC41700E69FCA /* UIView+Constraints.swift */; };
+		07349DAB204AD33200E69FCA /* FeedItemHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DAA204AD33200E69FCA /* FeedItemHeaderView.swift */; };
+		07349DAD204AFB0700E69FCA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07349DAC204AFB0700E69FCA /* Main.storyboard */; };
+		07349DB3204C2C0300E69FCA /* SlidingPhotosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DB2204C2C0300E69FCA /* SlidingPhotosView.swift */; };
+		07349DB5204C32EF00E69FCA /* SlidingPhotoViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */; };
+		07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */; };
+		07382E33202A26B80024459B /* FeedViewController.graphql in Resources */ = {isa = PBXBuildFile; fileRef = 07382E32202A26B80024459B /* FeedViewController.graphql */; };
+		076CFE892030B2B10021E452 /* PhotoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 076CFE882030B2B10021E452 /* PhotoView.swift */; };
+		0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA1F202B20F800D692F8 /* FeedItem.swift */; };
+		0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0780CA23202B924C00D692F8 /* FeedManager.swift */; };
+		07A1996E204C7D6500231087 /* PriceLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1996D204C7D6500231087 /* PriceLabel.swift */; };
+		07A19970204C7F5800231087 /* UIColor+Luna.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1996F204C7F5800231087 /* UIColor+Luna.swift */; };
+		07A19972204C893A00231087 /* PageControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19971204C893A00231087 /* PageControl.swift */; };
+		07A19974204C8BD900231087 /* MetroCircleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19973204C8BD900231087 /* MetroCircleView.swift */; };
+		07A19978204D256600231087 /* MetroView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19977204D256600231087 /* MetroView.swift */; };
+		07A1997A204D280A00231087 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19979204D280A00231087 /* API.swift */; };
+		07A1997E204D423F00231087 /* Address.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1997D204D423F00231087 /* Address.swift */; };
+		07A19980204D4B7D00231087 /* LunaLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A1997F204D4B7D00231087 /* LunaLabel.swift */; };
+		07A19982204D8ADE00231087 /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07A19981204D8ADE00231087 /* RatingView.swift */; };
 		07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */; };
-		07CA33A7201A7AB700E2B8D7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* ViewController.swift */; };
-		07CA33AA201A7AB700E2B8D7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33A8201A7AB700E2B8D7 /* Main.storyboard */; };
-		07CA33AD201A7AB700E2B8D7 /* Luna.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33AB201A7AB700E2B8D7 /* Luna.xcdatamodeld */; };
+		07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */; };
 		07CA33AF201A7AB700E2B8D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */; };
 		07CA33B2201A7AB700E2B8D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 07CA33B0201A7AB700E2B8D7 /* LaunchScreen.storyboard */; };
 		07CA33BD201A7AB700E2B8D7 /* LunaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 07CA33BC201A7AB700E2B8D7 /* LunaTests.swift */; };
+		18F2DD03BE7D75252D5CFAFC /* Pods_Luna.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A5B0229E789F58437FFC6875 /* Pods_Luna.framework */; };
+		21BF2DC545049FE2C4D5863D /* Pods_LunaTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = DC9E925C0FE259FFD39B1D9E /* Pods_LunaTests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,17 +46,40 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		07349DA8204AC41700E69FCA /* UIView+Constraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Constraints.swift"; sourceTree = "<group>"; };
+		07349DAA204AD33200E69FCA /* FeedItemHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemHeaderView.swift; sourceTree = "<group>"; };
+		07349DAC204AFB0700E69FCA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		07349DB2204C2C0300E69FCA /* SlidingPhotosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPhotosView.swift; sourceTree = "<group>"; };
+		07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SlidingPhotoViewCell.swift; sourceTree = "<group>"; };
+		07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItemTableViewCell.swift; sourceTree = "<group>"; };
+		07382E32202A26B80024459B /* FeedViewController.graphql */ = {isa = PBXFileReference; lastKnownFileType = text; path = FeedViewController.graphql; sourceTree = "<group>"; };
+		076CFE882030B2B10021E452 /* PhotoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoView.swift; sourceTree = "<group>"; };
+		0780CA1F202B20F800D692F8 /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		0780CA23202B924C00D692F8 /* FeedManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedManager.swift; sourceTree = "<group>"; };
+		07A1996D204C7D6500231087 /* PriceLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PriceLabel.swift; sourceTree = "<group>"; };
+		07A1996F204C7F5800231087 /* UIColor+Luna.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIColor+Luna.swift"; sourceTree = "<group>"; };
+		07A19971204C893A00231087 /* PageControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageControl.swift; sourceTree = "<group>"; };
+		07A19973204C8BD900231087 /* MetroCircleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroCircleView.swift; sourceTree = "<group>"; };
+		07A19977204D256600231087 /* MetroView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MetroView.swift; sourceTree = "<group>"; };
+		07A19979204D280A00231087 /* API.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = API.swift; path = Luna/API.swift; sourceTree = SOURCE_ROOT; };
+		07A1997D204D423F00231087 /* Address.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Address.swift; sourceTree = "<group>"; };
+		07A1997F204D4B7D00231087 /* LunaLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaLabel.swift; sourceTree = "<group>"; };
+		07A19981204D8ADE00231087 /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		07CA33A1201A7AB700E2B8D7 /* Luna.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Luna.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		07CA33A6201A7AB700E2B8D7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		07CA33A9201A7AB700E2B8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		07CA33AC201A7AB700E2B8D7 /* Luna.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Luna.xcdatamodel; sourceTree = "<group>"; };
+		07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		07CA33B1201A7AB700E2B8D7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		07CA33B3201A7AB700E2B8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		07CA33B8201A7AB700E2B8D7 /* LunaTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LunaTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		07CA33BC201A7AB700E2B8D7 /* LunaTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LunaTests.swift; sourceTree = "<group>"; };
 		07CA33BE201A7AB800E2B8D7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		21878F98D9841E7D7608A4B8 /* Pods-Luna.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Luna.release.xcconfig"; path = "Pods/Target Support Files/Pods-Luna/Pods-Luna.release.xcconfig"; sourceTree = "<group>"; };
+		650987A11985DCAC363A8FD8 /* Pods-Luna.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Luna.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Luna/Pods-Luna.debug.xcconfig"; sourceTree = "<group>"; };
+		91550865E10732883E22E7E3 /* Pods-LunaTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunaTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-LunaTests/Pods-LunaTests.debug.xcconfig"; sourceTree = "<group>"; };
+		A5B0229E789F58437FFC6875 /* Pods_Luna.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Luna.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		DC9E925C0FE259FFD39B1D9E /* Pods_LunaTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LunaTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		ECD970F7FA45C56ECA5B38BC /* Pods-LunaTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LunaTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-LunaTests/Pods-LunaTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +87,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18F2DD03BE7D75252D5CFAFC /* Pods_Luna.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -52,18 +95,82 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				21BF2DC545049FE2C4D5863D /* Pods_LunaTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		07349DA7204AC3EF00E69FCA /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				07349DA8204AC41700E69FCA /* UIView+Constraints.swift */,
+				07A1996F204C7F5800231087 /* UIColor+Luna.swift */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		07382E27202A04950024459B /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				07CA33A6201A7AB700E2B8D7 /* FeedViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		07382E28202A04C20024459B /* GraphQL */ = {
+			isa = PBXGroup;
+			children = (
+				07A19979204D280A00231087 /* API.swift */,
+				07382E32202A26B80024459B /* FeedViewController.graphql */,
+			);
+			path = GraphQL;
+			sourceTree = "<group>";
+		};
+		07382E2B202A17150024459B /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				07382E2E202A175A0024459B /* FeedItemTableViewCell.swift */,
+				07349DAA204AD33200E69FCA /* FeedItemHeaderView.swift */,
+				076CFE882030B2B10021E452 /* PhotoView.swift */,
+				07349DB2204C2C0300E69FCA /* SlidingPhotosView.swift */,
+				07349DB4204C32EF00E69FCA /* SlidingPhotoViewCell.swift */,
+				07A1996D204C7D6500231087 /* PriceLabel.swift */,
+				07A19971204C893A00231087 /* PageControl.swift */,
+				07A19973204C8BD900231087 /* MetroCircleView.swift */,
+				07A19977204D256600231087 /* MetroView.swift */,
+				07A1997F204D4B7D00231087 /* LunaLabel.swift */,
+				07A19981204D8ADE00231087 /* RatingView.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		07382E2C202A17290024459B /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				0780CA1F202B20F800D692F8 /* FeedItem.swift */,
+				07A1997D204D423F00231087 /* Address.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		0780CA19202B18C800D692F8 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				0780CA23202B924C00D692F8 /* FeedManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
 		07CA3398201A7AB700E2B8D7 = {
 			isa = PBXGroup;
 			children = (
 				07CA33A3201A7AB700E2B8D7 /* Luna */,
 				07CA33BB201A7AB700E2B8D7 /* LunaTests */,
 				07CA33A2201A7AB700E2B8D7 /* Products */,
+				1579EB5294E277A551468F71 /* Pods */,
+				F1D897D284F29CD75B118DD9 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -79,13 +186,17 @@
 		07CA33A3201A7AB700E2B8D7 /* Luna */ = {
 			isa = PBXGroup;
 			children = (
+				07349DA7204AC3EF00E69FCA /* Extensions */,
+				07382E2C202A17290024459B /* Models */,
+				07382E2B202A17150024459B /* Views */,
+				07382E27202A04950024459B /* Controllers */,
+				07382E28202A04C20024459B /* GraphQL */,
+				0780CA19202B18C800D692F8 /* Network */,
 				07CA33A4201A7AB700E2B8D7 /* AppDelegate.swift */,
-				07CA33A6201A7AB700E2B8D7 /* ViewController.swift */,
-				07CA33A8201A7AB700E2B8D7 /* Main.storyboard */,
 				07CA33AE201A7AB700E2B8D7 /* Assets.xcassets */,
+				07349DAC204AFB0700E69FCA /* Main.storyboard */,
 				07CA33B0201A7AB700E2B8D7 /* LaunchScreen.storyboard */,
 				07CA33B3201A7AB700E2B8D7 /* Info.plist */,
-				07CA33AB201A7AB700E2B8D7 /* Luna.xcdatamodeld */,
 			);
 			path = Luna;
 			sourceTree = "<group>";
@@ -99,6 +210,26 @@
 			path = LunaTests;
 			sourceTree = "<group>";
 		};
+		1579EB5294E277A551468F71 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				650987A11985DCAC363A8FD8 /* Pods-Luna.debug.xcconfig */,
+				21878F98D9841E7D7608A4B8 /* Pods-Luna.release.xcconfig */,
+				91550865E10732883E22E7E3 /* Pods-LunaTests.debug.xcconfig */,
+				ECD970F7FA45C56ECA5B38BC /* Pods-LunaTests.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		F1D897D284F29CD75B118DD9 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A5B0229E789F58437FFC6875 /* Pods_Luna.framework */,
+				DC9E925C0FE259FFD39B1D9E /* Pods_LunaTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -106,9 +237,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07CA33C1201A7AB800E2B8D7 /* Build configuration list for PBXNativeTarget "Luna" */;
 			buildPhases = (
+				286C20069D1A782E4279D77B /* [CP] Check Pods Manifest.lock */,
+				07382E34202A27570024459B /* Generate Apollo GraphQL API */,
 				07CA339D201A7AB700E2B8D7 /* Sources */,
 				07CA339E201A7AB700E2B8D7 /* Frameworks */,
 				07CA339F201A7AB700E2B8D7 /* Resources */,
+				1403A419BE6D118349E63CBF /* [CP] Embed Pods Frameworks */,
+				47BEFCF6B4BC4BB1E9F6B215 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -123,9 +258,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 07CA33C4201A7AB800E2B8D7 /* Build configuration list for PBXNativeTarget "LunaTests" */;
 			buildPhases = (
+				EED2268D1942A04CB75734F5 /* [CP] Check Pods Manifest.lock */,
 				07CA33B4201A7AB700E2B8D7 /* Sources */,
 				07CA33B5201A7AB700E2B8D7 /* Frameworks */,
 				07CA33B6201A7AB700E2B8D7 /* Resources */,
+				3A1913DDFF7D9CF5E2FA7BFF /* [CP] Embed Pods Frameworks */,
+				4655827B6968D3F1DEEAEE8E /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -184,7 +322,8 @@
 			files = (
 				07CA33B2201A7AB700E2B8D7 /* LaunchScreen.storyboard in Resources */,
 				07CA33AF201A7AB700E2B8D7 /* Assets.xcassets in Resources */,
-				07CA33AA201A7AB700E2B8D7 /* Main.storyboard in Resources */,
+				07382E33202A26B80024459B /* FeedViewController.graphql in Resources */,
+				07349DAD204AFB0700E69FCA /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,14 +336,148 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		07382E34202A27570024459B /* Generate Apollo GraphQL API */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Generate Apollo GraphQL API";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "APOLLO_FRAMEWORK_PATH=\"$(eval find $FRAMEWORK_SEARCH_PATHS -name \"Apollo.framework\" -maxdepth 1)\"\n\nif [ -z \"$APOLLO_FRAMEWORK_PATH\" ]; then\necho \"error: Couldn't find Apollo.framework in FRAMEWORK_SEARCH_PATHS; make sure to add the framework to your project.\"\nexit 1\nfi\n\ncd \"${SRCROOT}/${TARGET_NAME}\"\n$APOLLO_FRAMEWORK_PATH/check-and-run-apollo-codegen.sh generate $(find . -name '*.graphql') --schema schema.json --output API.swift\n";
+		};
+		1403A419BE6D118349E63CBF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-Luna/Pods-Luna-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+				"${BUILT_PRODUCTS_DIR}/Apollo/Apollo.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Apollo.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Luna/Pods-Luna-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		286C20069D1A782E4279D77B /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-Luna-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		3A1913DDFF7D9CF5E2FA7BFF /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LunaTests/Pods-LunaTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4655827B6968D3F1DEEAEE8E /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-LunaTests/Pods-LunaTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		47BEFCF6B4BC4BB1E9F6B215 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Luna/Pods-Luna-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		EED2268D1942A04CB75734F5 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LunaTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		07CA339D201A7AB700E2B8D7 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				07CA33AD201A7AB700E2B8D7 /* Luna.xcdatamodeld in Sources */,
-				07CA33A7201A7AB700E2B8D7 /* ViewController.swift in Sources */,
+				07A1997E204D423F00231087 /* Address.swift in Sources */,
+				07A19974204C8BD900231087 /* MetroCircleView.swift in Sources */,
+				07382E30202A175A0024459B /* FeedItemTableViewCell.swift in Sources */,
+				07A19978204D256600231087 /* MetroView.swift in Sources */,
+				07349DAB204AD33200E69FCA /* FeedItemHeaderView.swift in Sources */,
+				076CFE892030B2B10021E452 /* PhotoView.swift in Sources */,
+				07CA33A7201A7AB700E2B8D7 /* FeedViewController.swift in Sources */,
+				07349DB3204C2C0300E69FCA /* SlidingPhotosView.swift in Sources */,
+				07349DB5204C32EF00E69FCA /* SlidingPhotoViewCell.swift in Sources */,
+				07A1996E204C7D6500231087 /* PriceLabel.swift in Sources */,
 				07CA33A5201A7AB700E2B8D7 /* AppDelegate.swift in Sources */,
+				07A19970204C7F5800231087 /* UIColor+Luna.swift in Sources */,
+				0780CA24202B924C00D692F8 /* FeedManager.swift in Sources */,
+				07A19972204C893A00231087 /* PageControl.swift in Sources */,
+				07349DA9204AC41700E69FCA /* UIView+Constraints.swift in Sources */,
+				07A1997A204D280A00231087 /* API.swift in Sources */,
+				07A19980204D4B7D00231087 /* LunaLabel.swift in Sources */,
+				07A19982204D8ADE00231087 /* RatingView.swift in Sources */,
+				0780CA20202B20F800D692F8 /* FeedItem.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -227,14 +500,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		07CA33A8201A7AB700E2B8D7 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				07CA33A9201A7AB700E2B8D7 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		07CA33B0201A7AB700E2B8D7 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -355,11 +620,13 @@
 		};
 		07CA33C2201A7AB800E2B8D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 650987A11985DCAC363A8FD8 /* Pods-Luna.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H2J8552ML;
 				INFOPLIST_FILE = Luna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergeybutorin.Luna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -370,11 +637,13 @@
 		};
 		07CA33C3201A7AB800E2B8D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 21878F98D9841E7D7608A4B8 /* Pods-Luna.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = 3H2J8552ML;
 				INFOPLIST_FILE = Luna/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.sergeybutorin.Luna;
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -385,6 +654,7 @@
 		};
 		07CA33C5201A7AB800E2B8D7 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 91550865E10732883E22E7E3 /* Pods-LunaTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -402,6 +672,7 @@
 		};
 		07CA33C6201A7AB800E2B8D7 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = ECD970F7FA45C56ECA5B38BC /* Pods-LunaTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -448,19 +719,6 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
-
-/* Begin XCVersionGroup section */
-		07CA33AB201A7AB700E2B8D7 /* Luna.xcdatamodeld */ = {
-			isa = XCVersionGroup;
-			children = (
-				07CA33AC201A7AB700E2B8D7 /* Luna.xcdatamodel */,
-			);
-			currentVersion = 07CA33AC201A7AB700E2B8D7 /* Luna.xcdatamodel */;
-			path = Luna.xcdatamodeld;
-			sourceTree = "<group>";
-			versionGroupType = wrapper.xcdatamodel;
-		};
-/* End XCVersionGroup section */
 	};
 	rootObject = 07CA3399201A7AB700E2B8D7 /* Project object */;
 }
